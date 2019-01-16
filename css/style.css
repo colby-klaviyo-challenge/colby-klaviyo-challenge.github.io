@@ -1,3 +1,4 @@
+/* Sitewide CSS properties*/
 * { box-sizing: border-box; }
 
 body { 
@@ -27,11 +28,13 @@ a{
   color:#ebab18;
 }
 
+/* Class to give a background color darking than the body */
 .lighter{
   background-color: #2b3138;
   border-radius: 3px;
 }
 
+/* Header styling*/
 .header{
 	height: 100px;
 	text-align: center;
@@ -187,5 +190,5 @@ a{
   .grid-item--gigante {
     height: 400px;
     z-index: 2;
-}
+  }
 }
