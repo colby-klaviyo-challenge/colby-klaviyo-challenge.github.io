@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap, for the website layout portion -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+        <!-- Font -->
+        <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/style.css">
+
+        <!-- Masonry -->
+        <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
+        <!-- Jquery for callback functions -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+
+    
+        <title>Hello, world!</title>
+      </head>
+
+<body>
+    <div class="header">
+        <h1>Klaviyo Code Challenge</h1>
+    </div>
+    <!-- Container -->
+    <div class="container">
+        
+        <!-- Introduction -->    
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Welcome to Colby Moore's Klaviyo code challenge!</h3>
+                <p>Below is the challenge itself as well as my thoughts and a quick walkthrough of my decision making. My code is pretty well documented as well if you would also like to check that out. Found here: <a href="">Code Repo</a></p>
+            </div>
+        </div>
+        <!-- End introduction -->
+        
+        <!-- Grid challenge -->
+        <div class="row lighter m-top">
+            <div class="col-md-4 col-sm-12">
+                <h1 class="text-center">Where I started</h1>
+                <p>When I first saw the challenge and saw the grid layout, my mind went to the typical grid layout frameworks like Bootstrap, Bulma, or just plain CSS Grid.</p>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <h1 class="text-center">The Challenge</h1>
+                <p>Thinking about it deeper I realized that even if the grid layouts worked fine with those, the boxes when expanded would need to have the other boxes adjust relative to it.</p>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <h1 class="text-center">The Decision</h1>
+                <p>I decided to use a library called Masonry.js. "It works by placing elements in optimal position based on available vertical space, sort of like a mason fitting stones in a wall." Perfect.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 m-top">
+                <h3 class="text-center">Incoming Tron quote... couldn't help myself.</h3>
+                <p>"The grid. A digital frontier. I tried to picture clusters of information as they moved through the computer. What did they look like? Ships? Motorcycles? Were the circuits like freeways? I kept dreaming of a world I thought I'd never see. And then one day . . ." "You got in!"</p>
+                <p class="text-center">Anyways...</p>
+            </div>
+        </div>
+        <!-- End grid challenge -->
+        
+        <!-- Grid button container -->
+        <div class="row">
+            <div class="col-md-12 text-center" id="myBtnContainer">
+                <h3 class="text-center m-top"><u>The Grid</u>:</h3>
+                <p class="text-center">Click the boxes to toggle the height and reveal content.</p>
+                <button class="btn active" onclick="gridFilter('showAllBoxes')">Show all tiles</button>
+                <button class="btn" onclick="gridFilter('gray')">Gray tiles</button>
+                <button class="btn" onclick="gridFilter('yellow')">Yellow Tiles</button>
+                <button class="btn" onclick="gridFilter('blue')"> Blue Tiles</button>
+            </div>
+        </div>
+        <!-- End grid button container -->
+        
+        <!-- The grid and all its child grid items-->
+        <div class="grid">
+            <!-- First grid row -->
+            <div class="childshow grid-item grid-item--height2 grid-item--width2 gray">
+                <h3 class="item-text">This is a gray tile</h3>
+            </div>
+            <div class="childshow grid-item grid-item--height2 yellow">
+                <h3 class="item-text">This is a yellow tile</h3>
+            </div>
+            <div class="childshow grid-item gray">
+                <h3 class="item-text">This is a gray tile</h3>
+            </div>
+            <div class="childshow grid-item blue">
+                <h3 class="item-text">This is a blue tile</h3>
+            </div>
+            <!-- End first grid row -->
+
+            <!-- Second grid row -->
+            <div class="childshow grid-item yellow">
+                <h3 class="item-text">This is a yellow tile</h3>
+            </div>
+            <div class="childshow grid-item grid-item--height2 yellow">
+                <h3 class="item-text">This is a yellow tile</h3>
+            </div>
+            <div class="childshow grid-item blue">
+                <h3 class="item-text">This is a blue tile</h3>
+            </div>
+            <div class="childshow grid-item grid-item--height2 gray">
+                <h3 class="item-text">This is a gray tile</h3>
+            </div>
+            <div class="childshow grid-item yellow">
+                <h3 class="item-text">This is a yellow tile</h3>
+            </div>
+            <div class="childshow grid-item gray">
+                <h3 class="item-text">This is a gray tile</h3>
+            </div>
+            <!-- End second grid row -->
+
+            <!-- Third grid row -->
+            <div class="childshow grid-item grid-item--height2 blue">
+                <h3 class="item-text">This is a blue tile</h3>
+            </div>
+            <div class="childshow grid-item gray">
+                <h3 class="item-text">This is a gray tile</h3>
+            </div>
+            <div class="childshow grid-item blue">
+                <h3 class="item-text">This is a blue tile</h3>
+            </div>
+            <div class="childshow grid-item yellow">
+                <h3 class="item-text">This is a yellow tile</h3>
+            </div>
+            <div class="childshow grid-item blue">
+                <h3 class="item-text">This is a blue tile</h3>
+            </div>
+            <div class="childshow grid-item yellow">
+                <h3 class="item-text">This is a yellow tile</h3>
+            </div>
+            <div class="childshow grid-item gray">
+                <h3 class="item-text">This is a gray tile</h3>
+            </div>
+            <!-- End third grid row -->
+
+            <!-- Fourth grid row -->
+            <div class="childshow grid-item grid-item--height2 yellow">
+                    <h3 class="item-text">This is a yellow tile</h3>
+            </div>
+            <div class="childshow grid-item grid-item--height2 gray">
+                <h3 class="item-text">This is a gray tile</h3>
+            </div>
+            <div class="childshow grid-item grid-item--height2 grid-item--width2 blue">
+                <h3 class="item-text">This is a blue tile</h3>
+            </div>
+            <!-- End fourth grid row -->
+        </div>
+        <!-- End the grid -->
+        
+        <!-- Child element challenge -->
+        <div class="row">
+            <div class="col-md-12 m-top">
+                <h3 class="text-center">What next?</h3>
+                <p>The next challenge wasn't so much the resizing of the blocks when clicked (just toggling a class for that), but it was dealing with showing and hiding the text when expanded or collapsed.</p>
+            </div>
+        </div>
+        <div class="row lighter m-top">
+            <div class="col-md-4 col-sm-12">
+                <h1 class="text-center">Where I started</h1>
+                <p>My first thought was to do the same thing as when expanding the boxes and to just toggle a class called <i>hidden</i>, that would set display from none to block. But this came with some roadblocks</p>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <h1 class="text-center">The Challenge</h1>
+                <p>Now that the text is displayed and because it is a child element of the box, clicking certain spots would close the box as expected, but clicking the text would not.</p>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <h1 class="text-center">The Decision</h1>
+                <p>Now, we could probably add another function to do listen for a click on the child element and call the same functionality, but adding the style <i>pointer-events: none; </i> seemed to do the trick.</p>
+            </div>
+        </div>
+        <!-- End child element challenge -->
+
+        <!-- User interaction -->
+        <div class="row m-top">
+            <div class="col-md-12">
+                <p>As far as user interactions go, I decided to allow the user to mantain the expanded state on a box when clicking a seperate grid item. The way the boxes resize they take up 1/2 of the grid so if every 
+                box were to be expanded it would be a box side by side 50/50 for every "row". My reasoning was that if a user was looking to compare information in one grid item to another, it seems like it would be rather 
+                frustrating as a user to have to re-expand a box to get the info they were looking for in a box they were just looking at.</p>
+            </div>
+            <div class="col-md-12">
+                <p>Well it seems that would conclude my thought process for this code challenge, I hope it gave you enough insight into the decisions I made along the way. Thanks for checking it out!</p>
+                <h1>-Colby Moore<br><br><br></h1>
+            </div>
+        </div>
+        <!-- End user interaction -->
+    </div>
+    <!-- End container -->
+
+    <!-- External JS -->
+    <script type="text/javascript" src="/js/script.js"></script>
+
+</body>
+</html>

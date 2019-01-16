@@ -1,0 +1,191 @@
+* { box-sizing: border-box; }
+
+body { 
+  font-family: sans-serif;	
+  background-color: #373F47; 
+}
+
+h1{
+  margin-top: 40px;
+  font-size: 2rem;
+  color:#24ad69;
+}
+
+h3{
+  font-size: 1.75rem;
+  color: white;
+}
+
+p{
+  margin-top: 20px;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: white;
+}
+
+a{
+  color:#ebab18;
+}
+
+.lighter{
+  background-color: #2b3138;
+  border-radius: 3px;
+}
+
+.header{
+	height: 100px;
+	text-align: center;
+	max-width: 100%;
+	width: 100%;
+}
+
+	.header h3{
+		letter-spacing: .05em;
+		text-transform: uppercase;
+   	font-weight: 800;
+    font-size: 1.35em;
+		line-height: 87px;
+		font-family: 'Raleway', sans-serif;
+		margin: 0px;
+		color: #24ad69;
+
+	}
+
+/* Surrounding grid container */
+.grid {
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 860px;
+}
+
+/* clearfix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* Each generic grid item */
+.grid-item {
+  width: 200px;
+  height: 100px;
+  float: left;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  display: none;
+}
+
+  /* Create the hidden pseudo-element */
+  /* include the shadow for the end state */
+  .grid-item::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    border-radius: 5px;
+    box-shadow: 8px 8px 15px rgba(0,0,0,0.5);
+    transition: opacity 0.3s ease-in-out;
+  }
+
+    /* Scale up the box */
+    .grid-item:hover {
+      transform: scale(1.025, 1.025);
+      border-color: white;
+      cursor: pointer;
+    }
+
+    /* Fade in the pseudo-element with the bigger shadow */
+    .grid-item:hover::after {
+      opacity: 1;
+    }
+
+/* Alternate grid heights for different sized boxes */
+.grid-item--height2 { height: 220px; }
+.grid-item--width2 { width: 420px; }
+
+/* Any box click mantains these new dimensions */
+.grid-item--gigante {
+  width: 420px;
+  height: 400px;
+  z-index: 2; /* above other items */
+}
+
+/* Text that sits absolutely positioned within each box declaring box color */
+.item-text{
+  pointer-events: none;
+  display: none;
+  font-size: 20px;
+  color: gray;
+  width: 100%;
+  position: absolute;
+  font-family: 'Archivo Black', sans-serif;
+  font-weight: bold;
+  padding: 7%;
+}
+
+/* Box and box hover background variations */
+.gray{
+  background-color: #667582;
+}
+
+  .gray:hover{
+    background-color: #a7bed3;
+  }
+
+.blue{
+  background-color: #86D7C5;
+}
+
+  .blue:hover{
+    background-color: #acf9e9;
+  }
+
+.yellow{
+  background-color: #F3C808;
+}
+
+  .yellow:hover{
+    background-color: #ffe266;
+  }
+
+/* Depending on how classes are toggled having this class might be useful */
+.hidden{
+  display: none !important;
+}
+
+.show {
+  display: block;
+}
+
+.btn{
+  color: white;
+  border-radius: 3px;
+  background-color: #24ad69;
+}
+
+.active, .btn:hover{
+  background-color: #2b3138;
+  color: white;
+}
+
+.m-top{
+  margin-top: 40px;
+}
+
+/* Media Queries */
+
+/* When below 480px */
+@media screen and (max-width: 480px) {
+  /* For small phone screens make each box 100% width of contianer */
+  .grid-item {
+    width: 100%;
+    height: 200px;
+  }
+  .grid-item--gigante {
+    height: 400px;
+    z-index: 2;
+}
+}
